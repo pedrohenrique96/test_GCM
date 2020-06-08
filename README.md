@@ -4,10 +4,10 @@
 
 ## Rodando a aplicação
 
-Para rodar o projeto será necessário instalar as seguintes aplicações:
+Para rodar o projeto será necessário colocar esses comandos:
 
-- Backend ( yarn dev )
-- Front end ( yarn start )
+- Backend ( yarn e yarn dev )
+- Front end ( yarn e yarn start )
 
 ## Construido com
 
