@@ -37,9 +37,9 @@ const Dashboard: React.FC = () => {
   const [page, setPage] = useState(1);
   const [repos, setRepos] = useState<Repository[]>([]);
 
-  useEffect(() => {  // eslint-disable-next-line
+  useEffect(() => {
     if (repos.length) {
-      getRepos(); 
+      getRepos();
     }
   }, [page]);
 
@@ -119,9 +119,7 @@ const Dashboard: React.FC = () => {
         >
           Back
         </button>
-        <span>
-          Page {page}
-        </span>
+        <span>Page {page}</span>
         <button
           type="button"
           disabled={!repos.length}

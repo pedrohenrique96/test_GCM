@@ -24,6 +24,7 @@
     ],
     "rules": {
       "no-underscore-dangle": "off",
+      "react-hooks/exhaustive-deps": "warn",
       "prettier/prettier": "error",
       "class-methods-use-this": "off",
       "@typescript-eslint/camelcase": "off",

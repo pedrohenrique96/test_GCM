@@ -68,11 +68,11 @@ const ViewRepositoriesSaved: React.FC = () => {
                 <Pulls>
                   <PullItemTitle>
                     Pull Request 1:{' '}
-                    <strong>{repository.pulls[0]?.title||'Empty'}</strong>
+                    <strong>{repository.pulls[0]?.title || 'Empty'}</strong>
                   </PullItemTitle>
                   <PullItemTitle>
                     Pull Request 2:{' '}
-                    <strong>{repository.pulls[1]?.title||'Empty'}</strong>
+                    <strong>{repository.pulls[1]?.title || 'Empty'}</strong>
                   </PullItemTitle>
                   <PullItemTitle>
                     Pull Request 3:{' '}

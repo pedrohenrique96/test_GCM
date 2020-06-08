@@ -98,4 +98,3 @@ export const PullItemUserOpenUsername = styled.span`
 `;
 
 export const Title = styled.h1``;
-
