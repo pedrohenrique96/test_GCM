@@ -1,18 +1,13 @@
-
 <h3 align="center">
   CGM
 </h3>
-<blockquote align="center">CGM</blockquote>
-
-
 
 ## Rodando a aplicação
 
 Para rodar o projeto será necessário instalar as seguintes aplicações:
 
-- Node
-- Yarn (Opcional)
-
+- Backend ( yarn dev )
+- Front end ( yarn start )
 
 ## Construido com
 
