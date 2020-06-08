@@ -37,7 +37,7 @@ const Dashboard: React.FC = () => {
   const [page, setPage] = useState(1);
   const [repos, setRepos] = useState<Repository[]>([]);
 
-  function reloadPage(pageNumber: number) {
+  function reloadPagination(pageNumber: number) {
     setPage(pageNumber);
     getRepos();
   }
@@ -63,7 +63,6 @@ const Dashboard: React.FC = () => {
     } catch (err) {
       setLoading(false);
       toast.error('API limit exceeded');
-
     }
   }
 
@@ -116,7 +115,7 @@ const Dashboard: React.FC = () => {
         <button
           type="button"
           disabled={page < 2}
-          onClick={() => reloadPage(page - 1)}
+          onClick={() => reloadPagination(page - 1)}
         >
           Back
         </button>
@@ -124,7 +123,7 @@ const Dashboard: React.FC = () => {
         <button
           type="button"
           disabled={!repos.length}
-          onClick={() => reloadPage(page + 1)}
+          onClick={() => reloadPagination(page + 1)}
         >
           Next
         </button>
