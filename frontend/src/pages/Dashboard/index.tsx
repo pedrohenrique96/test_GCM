@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, useEffect } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { toast } from 'react-toastify';
 import Lottie from 'react-lottie';
 
@@ -37,15 +37,15 @@ const Dashboard: React.FC = () => {
   const [page, setPage] = useState(1);
   const [repos, setRepos] = useState<Repository[]>([]);
 
-  useEffect(() => {
-    if (repos.length) {
-      getRepos();
-    }
-  }, [page]);
+  function reloadPage(pageNumber: number) {
+    setPage(pageNumber);
+    getRepos();
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!username) {
+      toast.warning('Username not provided!');
       setError(true);
       return;
     }
@@ -62,7 +62,8 @@ const Dashboard: React.FC = () => {
       setRepos(response.data);
     } catch (err) {
       setLoading(false);
-      console.log(err);
+      toast.error('API limit exceeded');
+
     }
   }
 
@@ -71,7 +72,7 @@ const Dashboard: React.FC = () => {
       await api.post('create', { repository });
       toast.success('Saved successfully');
     } catch (err) {
-      toast.error('Error!');
+      toast.error('Failed save!');
     }
   }
 
@@ -115,7 +116,7 @@ const Dashboard: React.FC = () => {
         <button
           type="button"
           disabled={page < 2}
-          onClick={() => setPage(page - 1)}
+          onClick={() => reloadPage(page - 1)}
         >
           Back
         </button>
@@ -123,7 +124,7 @@ const Dashboard: React.FC = () => {
         <button
           type="button"
           disabled={!repos.length}
-          onClick={() => setPage(page + 1)}
+          onClick={() => reloadPage(page + 1)}
         >
           Next
         </button>

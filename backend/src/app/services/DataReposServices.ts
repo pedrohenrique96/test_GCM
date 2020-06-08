@@ -11,7 +11,6 @@ interface Response {
 
 export default class DataReposServices {
   async execute({ username, page }: Request): Promise<Response> {
-    console.log(page);
 
     if (!username) {
       throw new Error('Username not provided');
